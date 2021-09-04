@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>bug-record | Li's Blog</title><meta name="keywords" content="JavaScript"><meta name="author" content="Li"><meta name="copyright" content="Li"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="日常bug解决记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bug-record">
+<meta property="og:url" content="https://juncaili/blog.github.io/Blog.github.io/2021/08/25/bug-record/index.html">
+<meta property="og:site_name" content="Li&#39;s Blog">
+<meta property="og:description" content="日常bug解决记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/42626941?v=4">
+<meta property="article:published_time" content="2021-08-25T06:04:36.000Z">
+<meta property="article:modified_time" content="2021-08-25T09:39:03.163Z">
+<meta property="article:author" content="Li">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/42626941?v=4"><link rel="shortcut icon" href="/blog.github.io/Blog.github.io/img/favicon.png"><link rel="canonical" href="https://juncaili/blog.github.io/Blog.github.io/2021/08/25/bug-record/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog.github.io/Blog.github.io/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/blog.github.io/Blog.github.io/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'bug-record',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-08-25 17:39:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/42626941?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/blog.github.io/Blog.github.io/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/blog.github.io/Blog.github.io/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/blog.github.io/Blog.github.io/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog.github.io/Blog.github.io/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog.github.io/Blog.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/blog.github.io/Blog.github.io/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog.github.io/Blog.github.io/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/blog.github.io/Blog.github.io/">Li's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog.github.io/Blog.github.io/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/blog.github.io/Blog.github.io/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/blog.github.io/Blog.github.io/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/blog.github.io/Blog.github.io/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">bug-record</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-25T06:04:36.000Z" title="发表于 2021-08-25 14:04:36">2021-08-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-25T09:39:03.163Z" title="更新于 2021-08-25 17:39:03">2021-08-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog.github.io/Blog.github.io/categories/code/">code</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="bug-record"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>日常bug解决记录</p>
+</blockquote>
+<ol>
+<li>ajax 请求Post中设置contentType: “application/json”,让参数放在post的body中传递。 </li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">      <span class="attr">dataType</span>: <span class="string">&#x27;json&#x27;</span>,</span><br><span class="line">      <span class="attr">url</span>: <span class="string">&#x27;url&#x27;</span>,</span><br><span class="line">      <span class="attr">data</span>:  <span class="built_in">JSON</span>.stringify(params), <span class="comment">// 传递JSON数据要转换</span></span><br><span class="line">      <span class="attr">contentType</span>: <span class="string">&quot;application/json&quot;</span>, <span class="comment">// 定义内容类型</span></span><br><span class="line">      <span class="attr">cache</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!data) <span class="keyword">return</span> alert(<span class="string">&#x27;网络错误，请稍候再试。&#x27;</span>);</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">error</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">&#x27;网络错误，请稍候再试。&#x27;</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>ajax请求中添加dataType，可以让接口返回的数据转换为需要的类型</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;url&#x27;</span>,</span><br><span class="line">    <span class="attr">data</span>: &#123;</span><br><span class="line">        <span class="attr">orderId</span>: $(<span class="string">&#x27;#orderId&#x27;</span>).val(),</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">dataType</span>: <span class="string">&#x27;json&#x27;</span>, <span class="comment">// 将接口返回的数据转换为JSON格式 如  &quot;&#123;data:&#123;id:100&#125;&#125;&quot; =&gt; &#123;data:&#123;id:100&#125;&#125; </span></span><br><span class="line">    <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>多选数据过滤（一个Select框，下面是一个Table，Table展示数据）</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handleSettleBillId = <span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// value: [3000]  [300,700]</span></span><br><span class="line">  <span class="keyword">let</span> data = &#123;&#125;;</span><br><span class="line">  <span class="keyword">const</span> list = [];</span><br><span class="line">  value.map(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">    list.push(</span><br><span class="line">      settleBillData.find(<span class="function"><span class="params">n</span>=&gt;</span> n.id===item)    <span class="comment">// settleBillData -&gt;   [&#123;&#125;,&#123;&#125;]</span></span><br><span class="line">    )</span><br><span class="line">  &#125;)</span><br><span class="line">  setBatchList(list); <span class="comment">// [&#123;&#125;]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>dispatch.then()</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">  *<span class="function"><span class="title">handleUpdateBasicInfo</span>(<span class="params">&#123; payload, user &#125;, &#123; call, put, select &#125;</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> response = <span class="keyword">yield</span> call(postUpdateBasicInfo, payload);</span><br><span class="line">    <span class="keyword">if</span> (response &amp;&amp; response.status === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> response.data</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//这里在effect中直接return 我们想知道的结果</span></span><br><span class="line">  </span><br><span class="line">  handleUpdateBasicInfo = <span class="function">(<span class="params">params</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; dispatch &#125; = <span class="built_in">this</span>.props;</span><br><span class="line">  dispatch(&#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&#x27;user/handleUpdateBasicInfo&#x27;</span>,</span><br><span class="line">    <span class="attr">payload</span>: &#123;</span><br><span class="line">      ...params,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;res&#x27;</span>,res)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//这里then中可以获取到数据</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>复制内容</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">copyMyLink = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> activeContent = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;myLinkContent&#x27;</span>);</span><br><span class="line">  <span class="keyword">const</span> range = <span class="built_in">document</span>.createRange();</span><br><span class="line">  <span class="built_in">window</span>.getSelection().removeAllRanges();</span><br><span class="line">  range.selectNode(activeContent);</span><br><span class="line">  <span class="built_in">window</span>.getSelection().addRange(range);</span><br><span class="line">  <span class="keyword">const</span> success = <span class="built_in">document</span>.execCommand(<span class="string">&#x27;Copy&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (success) &#123;</span><br><span class="line">    message.success(<span class="string">&#x27;复制成功&#x27;</span>);</span><br><span class="line">    <span class="built_in">this</span>.handleModalCancel();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    message.error(<span class="string">&#x27;复制失败稍后再试&#x27;</span>)</span><br><span class="line">    <span class="built_in">this</span>.handleModalCancel();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>fixed,absolute 布局使用width:100%超出屏幕宽度</li>
+</ol>
+<p>我们只需要加上box-sizing: border-box;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bottom-bar</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>svg的fill属性可以修改图片的颜色(仅限在html插入svg标签)</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> svg<span class="selector-pseudo">:hover</span> <span class="selector-id">#facebook</span>,</span><br><span class="line"><span class="selector-tag">a</span> svg<span class="selector-pseudo">:hover</span> <span class="selector-id">#instagram</span> &#123; </span><br><span class="line">  fill: <span class="number">#AEEEEE</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://codepen.io/luiscarvalho/pen/hJFrx">https://codepen.io/luiscarvalho/pen/hJFrx</a></p>
+<ol start="8">
+<li>短边框问题  通过：after解决</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">        <span class="selector-class">.contentItem</span> &#123;</span><br><span class="line">          <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">          <span class="attribute">width</span>: <span class="number">215px</span>;</span><br><span class="line">          <span class="attribute">height</span>: <span class="number">80px</span>;</span><br><span class="line">          <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">          <span class="attribute">color</span>: <span class="number">#CB9E5D</span>;</span><br><span class="line">          <span class="attribute">font-size</span>:<span class="number">28px</span>;</span><br><span class="line">          <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">203</span>,<span class="number">158</span>,<span class="number">93</span>,<span class="number">0.10</span>);</span><br><span class="line">          <span class="attribute">line-height</span>: <span class="number">80px</span>;</span><br><span class="line">          <span class="attribute">position</span>: relative;</span><br><span class="line">          &amp;:after &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">24px</span>;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">            <span class="attribute">margin-top</span>: -<span class="number">10px</span>;</span><br><span class="line">            <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">1PX</span>;</span><br><span class="line">            <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">203</span>,<span class="number">158</span>,<span class="number">93</span>,<span class="number">0.40</span>);</span><br><span class="line">          &#125;</span><br><span class="line">          &amp;<span class="selector-pseudo">:last-child</span> &#123;</span><br><span class="line">            &amp;:after &#123;</span><br><span class="line">              display: none;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>底部留白问题</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">min-height</span>: <span class="number">100%</span>;</span><br><span class="line"><span class="attribute">box-sizing</span>: border-box;</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>遍历数据并Push数组</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">invoiceIssuanceType.forEach(<span class="function"><span class="params">m</span> =&gt;</span> &#123;</span><br><span class="line">  data.push(&#123;</span><br><span class="line">    <span class="attr">label</span>: m === <span class="string">&quot;1&quot;</span> ? <span class="string">&#x27;xxx&#x27;</span> : <span class="string">&#x27;XXX&#x27;</span>,</span><br><span class="line">    <span class="attr">value</span>: m,</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// data = &#123;lable:&#x27;XXX&#x27;,value:&#x27;xxx&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="12">
+<li>过滤数据</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (data.filter(<span class="function"><span class="params">m</span> =&gt;</span> m.value === <span class="string">&quot;2&quot;</span>).length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  items.default = <span class="string">&quot;2&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Li</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://juncaili/blog.github.io/Blog.github.io/2021/08/25/bug-record/">https://juncaili/blog.github.io/Blog.github.io/2021/08/25/bug-record/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="undefined" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://juncaili/blog.github.io/Blog.github.io" target="_blank">Li's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog.github.io/Blog.github.io/tags/JavaScript/">JavaScript</a></div><div class="post_share"><div class="social-share" data-image="https://avatars.githubusercontent.com/u/42626941?v=4" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/blog.github.io/Blog.github.io/2021/08/25/joseRead/"><img class="prev-cover" src="https://6b65-kefu-3nk4t-1301616291.tcb.qcloud.la/BannerImage/blog/jose%E4%B8%8E%E8%99%8E%E4%B8%8E%E9%B1%BC%E4%BB%AC.jpg?sign=5cbb61657a4e3b1a54292a6e3a7549ff&amp;t=1629889434" onerror="onerror=null;src='/blog.github.io/Blog.github.io/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">jose 与虎与鱼们</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/42626941?v=4" onerror="this.onerror=null;this.src='/blog.github.io/Blog.github.io/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Li</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/blog.github.io/Blog.github.io/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/blog.github.io/Blog.github.io/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/blog.github.io/Blog.github.io/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JunCaiLi"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JunCaiLi" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">蔡诗莹我喜欢你~</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog.github.io/Blog.github.io/2021/08/25/Hotarubi-no-mori-e/" title="萤火之森"><img src="https://6b65-kefu-3nk4t-1301616291.tcb.qcloud.la/BannerImage/blog/%E8%90%A4%E7%81%AB%E4%B9%8B%E6%A3%AE.jpg?sign=80b201ba1d67cbb5bf956d3bb85e434c&amp;t=1629889377" onerror="this.onerror=null;this.src='/blog.github.io/Blog.github.io/img/404.jpg'" alt="萤火之森"/></a><div class="content"><a class="title" href="/blog.github.io/Blog.github.io/2021/08/25/Hotarubi-no-mori-e/" title="萤火之森">萤火之森</a><time datetime="2021-08-25T10:52:47.000Z" title="发表于 2021-08-25 18:52:47">2021-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog.github.io/Blog.github.io/2021/08/25/words-bubble-up-like-soda/" title="言语如苏打般涌现"><img src="https://6b65-kefu-3nk4t-1301616291.tcb.qcloud.la/BannerImage/blog/%E8%A8%80%E8%AF%AD%E5%A6%82%E8%8B%8F%E6%89%93%E8%88%AC%E6%B6%8C%E7%8E%B0.jpg?sign=e64a3326b01b08f3524968a44ce25aa6&amp;t=1629889395" onerror="this.onerror=null;this.src='/blog.github.io/Blog.github.io/img/404.jpg'" alt="言语如苏打般涌现"/></a><div class="content"><a class="title" href="/blog.github.io/Blog.github.io/2021/08/25/words-bubble-up-like-soda/" title="言语如苏打般涌现">言语如苏打般涌现</a><time datetime="2021-08-25T10:48:29.000Z" title="发表于 2021-08-25 18:48:29">2021-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog.github.io/Blog.github.io/2021/08/25/XiaMu-friend-account/" title="夏目友人帐 唤石者和怪异的访客"><img src="https://6b65-kefu-3nk4t-1301616291.tcb.qcloud.la/BannerImage/blog/%E5%A4%8F%E7%9B%AE%E5%8F%8B%E4%BA%BA%E5%B8%90.jpg?sign=fbdfe1bf006ae4c80b4a0bfe5d89344d&amp;t=1629889407" onerror="this.onerror=null;this.src='/blog.github.io/Blog.github.io/img/404.jpg'" alt="夏目友人帐 唤石者和怪异的访客"/></a><div class="content"><a class="title" href="/blog.github.io/Blog.github.io/2021/08/25/XiaMu-friend-account/" title="夏目友人帐 唤石者和怪异的访客">夏目友人帐 唤石者和怪异的访客</a><time datetime="2021-08-25T09:57:00.000Z" title="发表于 2021-08-25 17:57:00">2021-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog.github.io/Blog.github.io/2021/08/25/flower-and-agreemnt/" title="朝花夕誓"><img src="https://6b65-kefu-3nk4t-1301616291.tcb.qcloud.la/BannerImage/blog/%E6%9C%9D%E8%8A%B1%E5%A4%95%E8%AA%93.jpg?sign=da972e82090923fa6f1dbdfa153d4f78&amp;t=1629889424" onerror="this.onerror=null;this.src='/blog.github.io/Blog.github.io/img/404.jpg'" alt="朝花夕誓"/></a><div class="content"><a class="title" href="/blog.github.io/Blog.github.io/2021/08/25/flower-and-agreemnt/" title="朝花夕誓">朝花夕誓</a><time datetime="2021-08-25T09:44:58.000Z" title="发表于 2021-08-25 17:44:58">2021-08-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog.github.io/Blog.github.io/2021/08/25/joseRead/" title="jose 与虎与鱼们"><img src="https://6b65-kefu-3nk4t-1301616291.tcb.qcloud.la/BannerImage/blog/jose%E4%B8%8E%E8%99%8E%E4%B8%8E%E9%B1%BC%E4%BB%AC.jpg?sign=5cbb61657a4e3b1a54292a6e3a7549ff&amp;t=1629889434" onerror="this.onerror=null;this.src='/blog.github.io/Blog.github.io/img/404.jpg'" alt="jose 与虎与鱼们"/></a><div class="content"><a class="title" href="/blog.github.io/Blog.github.io/2021/08/25/joseRead/" title="jose 与虎与鱼们">jose 与虎与鱼们</a><time datetime="2021-08-25T09:36:42.000Z" title="发表于 2021-08-25 17:36:42">2021-08-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Li</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog.github.io/Blog.github.io/js/utils.js"></script><script src="/blog.github.io/Blog.github.io/js/main.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
